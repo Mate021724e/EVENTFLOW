@@ -1,0 +1,21 @@
+# Rules for AI assistants working on this project
+
+## Architecture
+- Every concrete storage class must implement an interface from src/storage/interfaces.py
+- Services depend on interfaces only, never on concrete implementations
+- No external databases, APIs or file-system persistence; all storage is in-memory
+
+## Code style
+- Write tests before implementation (TDD)
+- Each test file mirrors its source: src/services/x.py -> tests/unit/test_x.py
+- Use pytest and pytest-cov only
+- Custom exceptions live in src/utils/exceptions.py
+- IDs are generated via src/utils/id_generator.py
+
+## Patterns
+- Event sorting/filtering: Strategy pattern (src/services/sort_strategies.py)
+- Platform notifications: Observer pattern (src/services/observer.py)
+
+## Coverage
+- Minimum 70%, target 80%+
+- Every exception path must have a test
