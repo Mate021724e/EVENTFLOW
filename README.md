@@ -11,7 +11,7 @@ An in-memory event management platform supporting event creation, participant re
 ```bash
 pip install -r requirements.txt
 mkdir -p reports
-pytest
+python -m pytest
 open reports/htmlcov/index.html
 ```
 
